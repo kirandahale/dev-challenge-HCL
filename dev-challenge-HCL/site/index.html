@@ -1,0 +1,43 @@
+<html>
+<head>
+    <!--
+    This is the library that provides websocket streaming pub/sub
+    The dev serverver is serving the html and javascript, but it also provides updating fx data on /fx/prices.
+     -->
+    <script src="stomp.js"></script>
+    <script src="sparkline.js"></script>
+</head>
+<body>
+
+<!-- This is a description of what you should do for this task.  You can remove it for your answer -->
+
+    <h1>Updating Price Table</h1>
+    <div>
+        <h3>Approach for Implementation</h3>
+        <div>
+            <ol>
+                <li>Subscribed to /fx/prices to get data for the table.</li>
+                <li>Created a fucntion createTable to create table dynamically and update data on DOM when data is getting updated. </li>
+                <li>Called createTable function on table data is updated</li>
+                <li>Created sparkline data as per calculation mentioned in assignment, draw the sparkline</li>
+                <li>Added 30 sec time interval to update sparkline data, so we can show last 30 sec best mid price data.</li>
+                <li>Sorted table by Last changed ask price amount column in descending order by javascript sort() method. </li>
+            </ol>
+        </div>
+        <h3>Frameworks/Liabraries would like to use:</h3>
+        <div>
+            <p>React JS I would like to use for this solution, because virtual DOM by which we can update only the changed data and for better performance for live update table.
+                Bootstrap for table, easy to paginate and manage data at client side.
+                In this case, would like to add server side pagination to limit data to push on client side so that DOM would not break after its limit exceeds.
+                
+            </p>
+        </div>
+    </div>
+    <div id="priceTable"></div>
+
+<!-- Code you write in index.js and anything it depends on will be bundled into bundle.js and
+     is included here -->
+<script src="bundle.js"></script>
+
+</body>
+</html>
